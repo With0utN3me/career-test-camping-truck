@@ -1,0 +1,36 @@
+.contact-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(36, 34, 34);
+    width: 290px;
+    border-radius: 10px;
+    background-color: rgb(252, 209, 190);
+    padding: 10px;
+
+}
+.contact-info{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    gap: 4px;
+}
+.contact-button{
+    border: 2px solid darkgrey;
+    border-radius: 6px;
+    height: 33px;
+    background-color: rgb(254, 248, 248);
+    box-shadow: 2px 2px 0 0 darkgrey,
+    4px 4px 0 0 black;
+    transition-duration: 200ms;
+}
+.contact-button:hover{
+    font-size: 20px;
+    box-shadow: 3px 3px darkgrey, 6px 6px 0 0 black;
+    transform: translate(2px, -2px);
+}
+.btnWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
