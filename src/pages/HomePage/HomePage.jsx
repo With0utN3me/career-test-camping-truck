@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 export default function HomePage() {
     return (
         <>
-            <DocumentTitle>Home</DocumentTitle>
+            <DocumentTitle>Home page</DocumentTitle>
             <div className={css.container}>
                 <img src="https://media.tenor.com/ggjli1Kk3s4AAAAi/phone.gif" alt="Phone gif" className={css.gif} />
                 <h1 className={css.title}>

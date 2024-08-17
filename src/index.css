@@ -1,14 +1,10 @@
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   display: flex;
   justify-content: center;
-  background-color: rgb(245, 215, 189);
+  color: #475467;
 }
 
 h1,
@@ -31,12 +27,10 @@ ol {
 img {
   display: block;
   max-width: 100%;
+  height: 100%;
 }
 input{
-  color: rgb(138, 60, 60);
   outline: none;
   border: none;
 }
-button{
-  color: rgb(138, 60, 60);
-}
+

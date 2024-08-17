@@ -1,15 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+    location: "",
+    vehicleType: "",
+    transmission: "",
+    kitchen: null,
+    AC: null,
+};
+
 const filtersSlice = createSlice({
     name: "filters",
-    initialState: { name: "" },
+    initialState, 
     reducers: {
-        changeFilter(state, action) {
-            state.name = action.payload;
+        setFilter(state, action) {
+            state[action.payload.filterName] = action.payload.value;
+        },
+        resetFilters(state) {
+            Object.keys(state).forEach(key => state[key] = initialState[key]);
         }
     }
 });
 
-export const { changeFilter } = filtersSlice.actions;
+export const { setFilter, resetFilters } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
-

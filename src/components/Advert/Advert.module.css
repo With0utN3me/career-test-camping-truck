@@ -1,0 +1,212 @@
+.advert-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-height: 358px;
+    padding: 24px;
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 20px;
+    background: #fff;
+    width: 890px;
+}
+
+.advert-image-wrap{
+    width: 290px;
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advert-image{
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+}
+
+.advert-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 526px;
+    height: 310px;
+}
+
+.advert-main-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.advert-title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #101828;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.rating-location{
+    display: flex;
+    flex-direction: row;
+    height: 24px;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    max-width: 276px;
+}
+
+.rating-p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating{
+    width: 16px;
+    height: 16px;
+    fill: #ffc531;
+}
+
+.location-p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.location{
+    width: 16px;
+    height: 16px;
+    stroke: #101828;
+    fill: none;
+}
+
+.reviews-link{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.price-fav{
+    display: flex;
+    flex-direction: row;
+    max-width: 168px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.advert-fav{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.advert-price{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.fav{
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: black;
+    object-fit: contain;
+}
+
+.advert-descr{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 525px;
+    height: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.advert-features{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.advert-feature{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    padding: 12px 18px;
+    background: #f2f4f7;
+}
+
+.feature-icon{
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #101828;
+}
+
+.users-icon{
+    width: 20px;
+    height: 20px;
+    fill: #101828;
+}
+
+.petrol-icon{
+    width: 20px;
+    height: 20px;
+    fill: #101828;
+}
+
+.ac-icon{
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke-width: 0.5px;
+    stroke: #101828;;
+}
+
+.more-btn{
+    align-self: start;
+    max-height: 100%;
+    width: 166px;
+    height: 56px;
+    padding: 16px 40px;
+    white-space: nowrap;
+    border-radius: 200px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #fff;
+    background: #e44848;
+    border: none;
+    cursor: pointer;
+}
+
+.more-btn:hover{
+    background: #d84343;
+}
