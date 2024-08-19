@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     location: "",
-    vehicleType: "",
+    form: "",
     transmission: "",
     kitchen: null,
-    AC: null,
+    TV: null,
+    shower: null,
 };
 
 const filtersSlice = createSlice({

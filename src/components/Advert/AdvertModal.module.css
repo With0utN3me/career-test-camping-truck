@@ -1,1 +1,318 @@
+.modal-wrapper{
+    display: flex;
+    justify-content: baseline;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 16px;
 
+}
+
+.title-exit{
+    display: flex;
+    flex-direction: row;
+    width: 890px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    height: 32px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.exit-btn{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.exit-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    stroke: #101828;
+    width: 32px;
+    height: 32px;
+}
+
+.rating-location{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    gap: 16px;
+}
+
+.rating{
+    width: 16px;
+    height: 16px;
+    fill: #ffc531;
+}
+
+.reviews-link{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+.location{
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: #101828;
+}
+
+.price{
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.images-wrap{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    width: 902px;
+    height: 310px;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrap{
+    width: 290px;
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    border-radius: 10px;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+}
+
+.full-details-wrap{
+    width: 902px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pick-context-wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+    align-self: start;
+    gap: 40px;
+    height: 48px;
+    border-bottom: 2px solid rgba(16, 24, 40, 0.2);
+}
+
+.context-btn{
+    height: 24px;
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    cursor: pointer;
+}
+.active-btn-wrap {
+    border-bottom: 5px solid #e44848;
+}
+
+.btn-wrap {
+    height: 49px;
+}
+
+.description-wrap{
+    margin-bottom: 44px;
+}
+
+
+.context-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+    gap: 24px;
+}
+
+.features-list{
+    width: 420px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 100px;
+    padding: 12px 18px;
+    background: #f2f4f7;
+}
+
+.users-icon{
+    width: 20px;
+    height: 20px;
+    fill: #101828;
+    stroke: none;
+}
+
+.petrol-icon{
+    width: 20px;
+    height: 20px;
+    fill: #101828;
+    stroke: none;
+
+}
+
+.feature-icon{
+    stroke: #101828;
+    fill: none;
+    width: 20px;
+    height: 20px;
+}
+
+.gas-icon{
+    stroke: none;
+    fill: #101828;
+    width: 20px;
+    height: 20px;
+}
+
+.toilet-icon{
+    stroke: none;
+    fill: #101828;
+    width: 20px;
+    height: 20px;
+}
+
+.van-details-wrap{
+    width: 420px;
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    gap: 24px;
+}
+
+.van-details-title{
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(16, 24, 40, 0.2);
+}
+
+.van-details-list{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.33333;
+    text-align: center;
+    color: #101828;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    gap: 14px;
+}
+
+.van-detail{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews-list{
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 24px;
+}
+
+.avatar-rating{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e44848;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    background: #f2f4f7;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.name-rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.star-icon{
+    width: 16px;
+    height: 16px;
+}
+.rating-stars.star-filled{
+    fill: #ffc531 !important;
+}
+
+.rating-stars.star-empty{
+    fill: #f2f4f7 !important;
+}
+
+.review-comment{
+    margin-top: 16px;
+}
+
+.modal-form{
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    padding: 24px;
+    width: 448px;
+    height: 532px;
+}

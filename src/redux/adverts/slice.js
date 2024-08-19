@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAdverts, fetchAdvertById, fetchSavedAdverts } from "./operations";
-import { loadFromLocalStorage, saveToLocalStorage, removeFromLocalStorage } from "../../utils/localStorage";
 
 const advertsSlice = createSlice({
     name: "adverts",
@@ -11,31 +10,21 @@ const advertsSlice = createSlice({
         isLoading: false,
         error: null,
         page: 1,
-        totalPages: 4
+        hasMore: true,
     },
     reducers: {
-        addAdvertToSaved: (state, action) => {
-            const advertId = action.payload;
-            let savedIds = loadFromLocalStorage('savedAdverts');
-            if (!savedIds.includes(advertId)) {
-                savedIds.push(advertId);
-                saveToLocalStorage('savedAdverts', savedIds);
-                const advert = state.allAdverts.find(ad => ad._id === advertId);
-                if (advert) {
-                    state.savedAdverts.push(advert);
-                }
-            }
-        },
-        removeAdvertFromSaved: (state, action) => {
-            const advertId = action.payload;
-            let savedIds = loadFromLocalStorage('savedAdverts');
-            savedIds = savedIds.filter(id => id !== advertId);
-            removeFromLocalStorage('savedAdverts', savedIds);
-            state.savedAdverts = state.savedAdverts.filter(advert => advert._id !== advertId);
-        },
         setPage: (state, action) => {
             state.page = action.payload;
         },
+        setSingleAdvert: (state, action) => {
+            state.singleAdvert = action.payload;
+        },
+        setAllAdverts: (state, action) => {
+            state.allAdverts = action.payload;
+        },
+        setSavedAdverts: (state, action) => {
+            state.savedAdverts = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -44,12 +33,14 @@ const advertsSlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchAdverts.fulfilled, (state, action) => {
-                state.isLoading = false;
+                const { allAdverts, hasMore } = action.payload;
                 if (state.page === 1) {
-                    state.allAdverts = action.payload;
+                    state.allAdverts = allAdverts;
                 } else {
-                    state.allAdverts = [...state.allAdverts, ...action.payload];
+                    state.allAdverts = [...state.allAdverts, ...allAdverts];
                 }
+                state.hasMore = hasMore;
+                state.isLoading = false;
             })
             .addCase(fetchAdverts.rejected, (state, action) => {
                 state.isLoading = false;
@@ -86,5 +77,5 @@ const advertsSlice = createSlice({
     }
 });
 
-export const { addAdvertToSaved, removeAdvertFromSaved, setPage } = advertsSlice.actions;
+export const { setPage, setSingleAdvert, setAllAdverts, setSavedAdverts } = advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

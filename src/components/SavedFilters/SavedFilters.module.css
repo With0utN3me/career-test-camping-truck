@@ -1,0 +1,174 @@
+.filters-wrapper{
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 32px;
+}
+
+.location-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+.location-title{
+    color: rgba(16, 24, 40, 0.6);
+}
+
+.location-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px; 
+    height: 20px; 
+    stroke: #101828; 
+    fill: none;
+}
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input{
+    border-radius: 10px;
+    padding: 18px;
+    padding-left: 44px;
+    width: 360px;
+    height: 56px;
+    background: #f7f7f7;
+}
+
+.filters-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+.filters-title{
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.equipment-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-self: start;
+    gap: 24px;
+}
+
+.equipment-title{
+    text-align: left;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(16, 24, 40, 0.1);
+    width: 100%;
+}
+
+.button-group{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 8px;
+    justify-content: baseline;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.button{
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 112px;
+    height: 95px;
+    background: white;
+}
+
+
+.feature-icon{
+    stroke: #101828;
+    fill: none;
+    width: 32px;
+    height: 32px;
+}
+
+.type-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 24px;
+    width: 100%;
+}
+
+.type-title{
+    text-align: left;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(16, 24, 40, 0.1);
+    width: 100%;
+}
+
+.radio-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 64px;
+}
+
+.radio-label{
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 100px;
+    height: 95px;
+}
+
+.radio-input{
+    display: none;
+}
+
+.van-icon{
+    width: 40px;
+    height: 28px;
+    stroke: none;
+    fill: #101828;
+}
+
+.search-button{
+    align-self: start;
+    max-height: 100%;
+    width: 166px;
+    height: 56px;
+    padding: 16px 40px;
+    white-space: nowrap;
+    border-radius: 200px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #fff;
+    background: #e44848;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button:hover{
+    background: #d84343;
+}
+
+.active{
+    border: 1px solid #e44848;
+}

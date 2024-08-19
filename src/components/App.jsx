@@ -9,6 +9,7 @@ import { selectIsLoading } from '../redux/adverts/selectors';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const AdvertsPage = lazy(() => import('../pages/AdvertsPage/AdvertsPage'));
+const FavsPage = lazy(() => import('../pages/FavsPage/FavsPage'));
 
 
 const App = () => {
@@ -22,7 +23,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/catalog" element={<AdvertsPage />}/>
+        <Route path="/catalog" element={<AdvertsPage />} />
+
+        <Route path='/favorites' element={<FavsPage />} />
       </Routes>
     </Layout>
   )

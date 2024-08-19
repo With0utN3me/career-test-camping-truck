@@ -1,14 +1,18 @@
 import css from "./Advert.module.css";
-import icons from "../../assets/icons.svg"
+import icons from "../../assets/icons.svg";
 import { AdvertModal } from "./AdvertModal";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAdvertById } from "../../redux/adverts/operations";
+import { fetchAdvertById, fetchSavedAdverts } from "../../redux/adverts/operations";
 import { selectSingleAdvert } from "../../redux/adverts/selectors";
+import { setSingleAdvert } from "../../redux/adverts/slice";
+import { saveToLocalStorage, removeFromLocalStorage, loadFromLocalStorage } from "../../utils/localStorage";
 // import toast from 'react-hot-toast';
 const Advert = ({ advert }) => {
     const dispatch = useDispatch();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [context, setContext] = useState("features");
+    const [isFav, setIsFav] = useState(false);
 
     const handleClick = () => {
         dispatch(fetchAdvertById(advert._id))
@@ -19,7 +23,36 @@ const Advert = ({ advert }) => {
     };
     const handleExit = () => {
         setIsModalOpen(false);
+        setSingleAdvert(null);
+        setContext("features");
     };
+
+    const handleLinkClick = () => {
+        handleClick();
+        setContext("reviews");
+    };
+
+    const handleFavClick = () => {
+        const savedAdverts = loadFromLocalStorage('savedAdverts') || [];
+
+        if (savedAdverts.includes(advert._id)) {
+            removeFromLocalStorage('savedAdverts', advert._id);
+            setIsFav(false);
+            dispatch(fetchSavedAdverts());
+        } else {
+            savedAdverts.push(advert._id);
+            saveToLocalStorage('savedAdverts', savedAdverts);
+            setIsFav(true);
+        }
+    };
+    const checkIfFav = () => {
+        const savedAdverts = loadFromLocalStorage('savedAdverts') || [];
+        setIsFav(savedAdverts.includes(advert._id));
+    };
+
+    useEffect(() => {
+        checkIfFav();
+    }, );
     const singleAdvert = useSelector(selectSingleAdvert);
 
     return(
@@ -32,9 +65,12 @@ const Advert = ({ advert }) => {
                     <h3 className={css["advert-title"]}>{advert.name}</h3>
                     <div className={css["price-fav"]}>
                         <h3 className={css["advert-price"]}>€{advert.price}.00</h3>
-                        <button className={css["advert-fav"]}>
-                            <svg className={css["fav"]}>
-                                    <use href={`${icons}#icon-save`} />
+                        <button className={css["advert-fav"]} onClick={handleFavClick}>
+                            <svg
+                                className={css["fav"]}
+                                style={{ fill: isFav ? '#e44848' : 'none', stroke: isFav ? 'none' : '#101828' }}
+                            >
+                                <use href={`${icons}#icon-save`} />
                             </svg>
                         </button>
                     </div>
@@ -44,7 +80,7 @@ const Advert = ({ advert }) => {
                         <svg className={css["rating"]} aria-hidden="true" viewBox="0 0 24 24">
                                 <use href={`${icons}#icon-Rating`} />
                         </svg>
-                        <button className={css["reviews-link"]} onClick={handleClick}>{advert.rating}({advert.reviews.length} Reviews)</button>
+                        <button className={css["reviews-link"]} onClick={handleLinkClick}>{advert.rating}({advert.reviews.length} Reviews)</button>
                     </p>
                     <p className={css["location-p"]}>
                         <svg className={css["location"]} aria-hidden="true">
@@ -87,7 +123,7 @@ const Advert = ({ advert }) => {
                         <svg className={css["feature-icon"]} aria-hidden="true">
                             <use href={`${icons}#icon-bed`} />
                         </svg>
-                        {advert.beds} beds
+                        {advert.details.beds} beds
                     </li>
 
                     <li className={css["advert-feature"]}>
@@ -103,12 +139,16 @@ const Advert = ({ advert }) => {
                 </ul>
                 <button className={css["more-btn"]}  onClick={handleClick}>Show more</button>
             </div>
-            <AdvertModal
-                isOpen={isModalOpen}
-                onRequestClose={() => setIsModalOpen(false)}
-                advert={singleAdvert}
-                handleExit={handleExit}
-            />
+            {singleAdvert && (
+                <AdvertModal
+                    isOpen={isModalOpen}
+                    onRequestClose={handleExit}
+                    advert={singleAdvert}
+                    context={context}
+                    setContext={setContext}
+                    handleExit={handleExit}
+                />
+            )}
         </div>
     )
 }

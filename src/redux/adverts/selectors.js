@@ -1,10 +1,10 @@
 export const selectAdverts = (state) => state.adverts.allAdverts;
 
+export const selectHasMore = (state) => state.adverts.hasMore;
+
 export const selectSingleAdvert = (state) => state.adverts.singleAdvert
 
 export const selectPage = (state) => state.adverts.page;
-
-export const selectTotalPages = (state) => state.adverts.totalPages;
 
 export const selectSavedAdverts = (state) => state.adverts.savedAdverts;
 

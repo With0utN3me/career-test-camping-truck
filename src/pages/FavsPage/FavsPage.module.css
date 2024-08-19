@@ -1,0 +1,12 @@
+.page-wrapper{
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+    margin: 80px auto;
+}
+.filters{
+    width: 360px;
+}
+.adverts{
+    width: 890px;
+}
