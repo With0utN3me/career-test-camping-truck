@@ -7,6 +7,7 @@ import Notification from '../../components/Notification/Notification';
 import AppBar from "../../components/AppBar/AppBar";
 import { selectIsLoading, selectError, selectSavedAdverts } from '../../redux/adverts/selectors';
 import { fetchSavedAdverts } from '../../redux/adverts/operations';
+import { resetFilters } from '../../redux/filters/slice';
 import css from "./FavsPage.module.css"
 
 export default function FavsPage() {
@@ -17,6 +18,7 @@ export default function FavsPage() {
 
 
     useEffect(() => {
+        dispatch(resetFilters());
         dispatch(fetchSavedAdverts());
     }, [dispatch]);
 

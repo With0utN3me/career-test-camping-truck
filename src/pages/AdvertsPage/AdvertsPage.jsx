@@ -8,6 +8,7 @@ import AppBar from "../../components/AppBar/AppBar";
 import { selectIsLoading, selectError, selectAdverts, selectPage, selectHasMore } from '../../redux/adverts/selectors';
 import { fetchAdverts } from '../../redux/adverts/operations';
 import { setPage } from '../../redux/adverts/slice';
+import { resetFilters } from '../../redux/filters/slice';
 import css from "./AdvertsPage.module.css"
 
 export default function AdvertsPage() {
@@ -19,6 +20,7 @@ export default function AdvertsPage() {
     const page = useSelector(selectPage);
 
     useEffect(() => {
+        dispatch(resetFilters());
         dispatch(fetchAdverts({ page, limit: 4 }));
     }, [dispatch, page]);
 
